@@ -11,6 +11,7 @@
     <module>module-main</module>
     <module>module-parent</module>
     <module>module-events</module>
+    <module>api-message</module>
   </modules>
 
   <packaging>pom</packaging>
