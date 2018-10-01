@@ -1,0 +1,12 @@
+---
+applications:
+- name: clouder-module-main
+  memory: 1G
+  random-route: true
+  path: module-main/target/module-main-1.0-SNAPSHOT.jar
+
+- name: clouder-module-events
+  memory: 1G
+  random-route: true
+  path: module-events/target/module-events-1.0-SNAPSHOT.jar
+
