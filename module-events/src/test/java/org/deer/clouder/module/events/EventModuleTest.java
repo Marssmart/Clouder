@@ -1,5 +1,4 @@
-package org.deer.clouder.module.main;
-
+package org.deer.clouder.module.events;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -8,10 +7,9 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
-class MainModuleTests {
+class EventModuleTest {
 
     @Test
     void contextLoads() {
     }
-
 }
