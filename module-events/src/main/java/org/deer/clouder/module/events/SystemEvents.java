@@ -30,7 +30,7 @@ public class SystemEvents {
             new NodeReady("module-events"));
     }
 
-    @Scheduled(fixedRate = 3000)
+    @Scheduled(fixedRate = 60000)
     public void whenApplicationLiving() {
         LOG.trace("Events module living, sending notification...");
         rabbit.convertAndSend(NODE_LIFECYCLE_TOPIC.name(), NODE_LIVING_QUEUE.route(),
