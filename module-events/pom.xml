@@ -12,7 +12,7 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>module-main</artifactId>
+  <artifactId>module-events</artifactId>
   <version>${project.parent.version}</version>
 
   <dependencies>
