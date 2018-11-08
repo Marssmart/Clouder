@@ -6,27 +6,18 @@ import org.deer.clouder.api.message.BaseMessage;
 
 public class NodeReady extends BaseMessage {
 
-    @JsonProperty("nodeName")
-    private final String nodeName;
 
-    @JsonCreator
-    NodeReady(@JsonProperty("nodeName") final String nodeName, @JsonProperty("createAt") final String createdAt) {
-        super(createdAt);
-        this.nodeName = nodeName;
-    }
+  @JsonCreator
+  NodeReady(@JsonProperty("nodeName") final String nodeName,
+      @JsonProperty("createAt") final String createdAt) {
+    super(createdAt, nodeName);
+  }
 
-    public NodeReady(final String nodeName) {
-        this.nodeName = nodeName;
-    }
+  public NodeReady() {
+  }
 
-    public String nodeName() {
-        return nodeName;
-    }
-
-    @Override
-    public String toString() {
-        return "NodeReady{" +
-            "nodeName='" + nodeName + '\'' +
-            "} extends " + super.toString();
-    }
+  @Override
+  public String toString() {
+    return "NodeReady{} extends " + super.toString();
+  }
 }

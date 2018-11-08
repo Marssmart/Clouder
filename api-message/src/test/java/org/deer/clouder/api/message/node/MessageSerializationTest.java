@@ -11,33 +11,33 @@ import org.junit.jupiter.api.TestFactory;
 
 abstract class MessageSerializationTest<T extends BaseMessage> {
 
-    private static ObjectMapper objectMapper;
+  private static ObjectMapper objectMapper;
 
-    private final Class<T> messageType;
+  private final Class<T> messageType;
 
-    MessageSerializationTest(Class<T> messageType) {
-        this.messageType = messageType;
-    }
+  MessageSerializationTest(Class<T> messageType) {
+    this.messageType = messageType;
+  }
 
-    @BeforeAll
-    static void init() {
-        objectMapper = new ObjectMapper();
-    }
+  @BeforeAll
+  static void init() {
+    objectMapper = new ObjectMapper();
+  }
 
-    abstract Iterator<T> testData();
+  abstract Iterator<T> testData();
 
-    abstract void assertSame(final T original, final T result);
+  abstract void assertSame(final T original, final T result);
 
-    @TestFactory
-    Stream<DynamicTest> testSerialize() {
+  @TestFactory
+  Stream<DynamicTest> testSerialize() {
 
-        return DynamicTest.stream(testData(), T::toString, data -> {
-            final ObjectWriter writer = objectMapper.writer();
-            System.out.println(writer.writeValueAsString(data));
-            final T deserialized = objectMapper.readerFor(messageType)
-                .readValue(writer.writeValueAsBytes(data));
+    return DynamicTest.stream(testData(), T::toString, data -> {
+      final ObjectWriter writer = objectMapper.writer();
+      System.out.println(writer.writeValueAsString(data));
+      final T deserialized = objectMapper.readerFor(messageType)
+          .readValue(writer.writeValueAsBytes(data));
 
-            assertSame(data, deserialized);
-        });
-    }
+      assertSame(data, deserialized);
+    });
+  }
 }

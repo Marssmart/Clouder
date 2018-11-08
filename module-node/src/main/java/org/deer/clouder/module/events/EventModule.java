@@ -17,17 +17,17 @@ import org.springframework.scheduling.concurrent.ConcurrentTaskScheduler;
 @EnableHystrixDashboard
 public class EventModule {
 
-    public static void main(String[] args) {
-        new SpringApplicationBuilder(EventModule.class).application().run(args);
-    }
+  public static void main(String[] args) {
+    new SpringApplicationBuilder(EventModule.class).application().run(args);
+  }
 
-    @Bean
-    public MessageConverter jsonMessageConverter() {
-        return new Jackson2JsonMessageConverter();
-    }
+  @Bean
+  public MessageConverter jsonMessageConverter() {
+    return new Jackson2JsonMessageConverter();
+  }
 
-    @Bean
-    public TaskScheduler taskScheduler() {
-        return new ConcurrentTaskScheduler();
-    }
+  @Bean
+  public TaskScheduler taskScheduler() {
+    return new ConcurrentTaskScheduler();
+  }
 }
