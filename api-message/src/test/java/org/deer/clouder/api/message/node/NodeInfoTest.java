@@ -19,8 +19,7 @@ class NodeInfoTest extends MessageSerializationTest<NodeInfo> {
         new NodeInfo("node", "time", null, null),
         new NodeInfo("node", "time", emptySet(), emptySet()),
         new NodeInfo("node", "time", singleton(new SystemProperty("key", "value")),
-            singleton(new FileSystemElement("path1",
-                singleton(new FileSystemElement("path1/path2", null)))))
+            singleton(new FileSystemElement("path1")))
     ).iterator();
   }
 
